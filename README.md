@@ -26,7 +26,6 @@
 
 Steps to run the application:
 =============================
-* Docker compose version used - 3.7
 * Kindly ensure that docker and docker-compose is installed
 * Run application locally
   * Execute ```docker-compose -f docker-compose-only-db.yml up``` (to run PSQL container in the docker )
