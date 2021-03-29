@@ -34,6 +34,7 @@ Steps to run the application:
   * Run the application locally using ```mvn spring-boot:run``` command
 * Run application in the docker
   * Make sure ```application.yml``` => ```tracker.db.url``` => host = ```postgres```(service name in the docker-compose.yml)
+  * Build the jar by executing the command ```mvn clean package```
   * Execute ```docker-compose -f docker-compose-full.yml up```
   
 Services in docker-compose:
