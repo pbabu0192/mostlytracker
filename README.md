@@ -14,10 +14,10 @@
   
 2. Added OPENAPI specification (Swagger) --> *http://localhost:9090/swagger-ui/index.html*
 3. Both API & Swagger are secured using SpringSecurity BasicAuth
-   * API credentials  
+  * API credentials  
     * USERNAME: tracker_user
     * PASSWORD: tracker_pass
-   * Swagger credentials 
+  * Swagger credentials 
     * USERNAME: swagger_user 
     * PASSWORD: swagger_password
   * Kindly trim the credentials before using.
