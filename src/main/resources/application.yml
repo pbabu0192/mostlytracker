@@ -1,7 +1,7 @@
 #common properties
 tracker:
   db:
-    url: jdbc:postgresql://localhost:5432/${tracker.db.name}?currentSchema=mostly-tracker
+    url: jdbc:postgresql://postgres:5432/${tracker.db.name}?currentSchema=mostly-tracker
     name: mostly-tracker
     username: tracker
     password: tracker

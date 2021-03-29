@@ -1,10 +1,10 @@
 package com.mosltyai.mostlytracker.service;
 
-import com.mosltyai.mostlytracker.model.Project;
-import com.mosltyai.mostlytracker.model.ProjectEntry;
 import com.mosltyai.mostlytracker.exception.ExceptionType;
 import com.mosltyai.mostlytracker.exception.MostlyTrackerException;
 import com.mosltyai.mostlytracker.mapper.ProjectMapper;
+import com.mosltyai.mostlytracker.model.Project;
+import com.mosltyai.mostlytracker.model.ProjectEntry;
 import com.mosltyai.mostlytracker.repository.ProjectEntryRepository;
 import com.mosltyai.mostlytracker.repository.ProjectRepository;
 import com.mosltyai.mostlytracker.service.type.ServiceProject;
@@ -33,17 +33,34 @@ public class DefaultProjectService implements ProjectService {
   @NonNull private final ProjectMapper projectMapper;
   @NonNull private final BeanUtilsBean beanUtilsBean;
 
+  /**
+   * Creates a project
+   *
+   * @param serviceProject
+   * @return Project
+   */
   @Override
   public Project createProject(final ServiceProject serviceProject) {
     validateDateRange(serviceProject);
     return projectRepository.save(projectMapper.toModel(serviceProject));
   }
 
+  /**
+   * Get all the available projects
+   *
+   * @return List<Project>
+   */
   @Override
   public List<Project> getProjects() {
     return projectRepository.findAll();
   }
 
+  /**
+   * Get a project with given project Id
+   *
+   * @param projectId
+   * @return Project
+   */
   @Override
   public Project getProjectById(final UUID projectId) {
     return projectRepository
@@ -55,6 +72,12 @@ public class DefaultProjectService implements ProjectService {
                     String.format("Project with id = %s is not found", projectId)));
   }
 
+  /**
+   * Partially update project with the provided non null (except endDate) values
+   *
+   * @param serviceProject
+   * @return Project
+   */
   @SneakyThrows
   @Override
   public Project updateProjectById(final ServiceProject serviceProject) {
@@ -78,6 +101,11 @@ public class DefaultProjectService implements ProjectService {
     return projectRepository.save(project);
   }
 
+  /**
+   * Deletes a project with the given project id
+   *
+   * @param projectId
+   */
   @Override
   public void deleteProjectById(final UUID projectId) {
 
@@ -90,6 +118,12 @@ public class DefaultProjectService implements ProjectService {
     }
   }
 
+  /**
+   * Retrieves the summary of the given project.
+   *
+   * @param projectId
+   * @return
+   */
   @Override
   public ServiceProjectSummary getProjectSummary(final UUID projectId) {
 
@@ -151,8 +185,11 @@ public class DefaultProjectService implements ProjectService {
   }
 
   /**
+   * Validate date range to update with the existing date range
+   *
    * @param serviceProject
    * @param project
+   * @throws MostlyTrackerException
    */
   private void validateDateRange(final ServiceProject serviceProject, Project project) {
     LocalDate startDateToUpdate = serviceProject.getStartDate();
@@ -184,6 +221,12 @@ public class DefaultProjectService implements ProjectService {
     }
   }
 
+  /**
+   * Validate date range of project to be created
+   *
+   * @param serviceProject
+   * @throws MostlyTrackerException
+   */
   public void validateDateRange(ServiceProject serviceProject) {
     if (Objects.nonNull(serviceProject.getEndDate())
         && serviceProject.getStartDate().isAfter(serviceProject.getEndDate())) {

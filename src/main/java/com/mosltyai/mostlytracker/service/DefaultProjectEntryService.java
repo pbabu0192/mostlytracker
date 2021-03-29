@@ -1,10 +1,10 @@
 package com.mosltyai.mostlytracker.service;
 
-import com.mosltyai.mostlytracker.model.Project;
-import com.mosltyai.mostlytracker.model.ProjectEntry;
 import com.mosltyai.mostlytracker.exception.ExceptionType;
 import com.mosltyai.mostlytracker.exception.MostlyTrackerException;
 import com.mosltyai.mostlytracker.mapper.ProjectEntryMapper;
+import com.mosltyai.mostlytracker.model.Project;
+import com.mosltyai.mostlytracker.model.ProjectEntry;
 import com.mosltyai.mostlytracker.repository.ProjectEntryRepository;
 import com.mosltyai.mostlytracker.repository.ProjectRepository;
 import com.mosltyai.mostlytracker.service.type.ServiceProjectEntry;
@@ -34,6 +34,12 @@ public class DefaultProjectEntryService implements ProjectEntryService {
   @Value("${tracker.time-spent.allowed.per-day}")
   private Double allowedTimeSpentPerDay;
 
+  /**
+   * Creates a project entry for the given project
+   *
+   * @param serviceProjectEntry
+   * @return
+   */
   @Override
   public ProjectEntry createProjectEntry(final ServiceProjectEntry serviceProjectEntry) {
 
@@ -53,6 +59,11 @@ public class DefaultProjectEntryService implements ProjectEntryService {
     }
   }
 
+  /**
+   * Deletes a project entry with the project entry id
+   *
+   * @param projectEntryId
+   */
   @Override
   public void deleteProjectEntry(final UUID projectEntryId) {
     try {
@@ -64,6 +75,12 @@ public class DefaultProjectEntryService implements ProjectEntryService {
     }
   }
 
+  /**
+   * Retrieve all project entries for the given project id
+   *
+   * @param projectId
+   * @return
+   */
   @Override
   public List<ProjectEntry> getProjectEntriesByProject(final UUID projectId) {
     return projectEntryRepository.findAllByProjectId(projectId).stream()
