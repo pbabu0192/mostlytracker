@@ -14,12 +14,12 @@
   
 2. Added OPENAPI specification (Swagger) --> *http://localhost:9090/swagger-ui/index.html*
 3. Both API & Swagger are secured using SpringSecurity BasicAuth
-  * API credentials  
-      * USERNAME: tracker_user
-      * PASSWORD: tracker_pass
-  * Swagger credentials 
-      * USERNAME: swagger_user 
-      * PASSWORD: swagger_password
+   * API credentials  
+    * USERNAME: tracker_user
+    * PASSWORD: tracker_pass
+   * Swagger credentials 
+    * USERNAME: swagger_user 
+    * PASSWORD: swagger_password
   * Kindly trim the credentials before using.
 4. TestContainers are added to avoid dependencies on the actual PSQL container.
   * Can execute the tests using ```mvn test``` command(Kindly ensure to be on the working directory before executing the task)
