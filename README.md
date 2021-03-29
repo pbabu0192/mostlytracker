@@ -21,7 +21,7 @@
       * USERNAME: ```swagger_user```
       * PASSWORD: ```swagger_password```
 *   Kindly trim the credentials before using.
-* TestContainers are added to avoid dependencies on the actual PSQL container.
+* ```TestContainers``` are added to avoid dependencies on the actual ```PostgresSQLContainer```.
   * Can execute the tests using ```mvn test``` command(Kindly ensure to be on the working directory before executing the task)
 
 Steps to run the application:
