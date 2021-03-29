@@ -1,0 +1,19 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:11
+    container_name: mostly-tracker-db
+    hostname: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=mostly-tracker
+      - POSTGRES_USER=tracker
+      - POSTGRES_PASSWORD=tracker
+    volumes:
+      - ./model/postgresql-model/:/var/lib/postgresql/model
+    networks:
+      - mostly-tracker
+    restart: unless-stopped
+networks:
+  mostly-tracker:

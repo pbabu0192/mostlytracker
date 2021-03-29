@@ -1,0 +1,50 @@
+#common properties
+tracker:
+  db:
+    url: jdbc:postgresql://localhost:5432/${tracker.db.name}?currentSchema=mostly-tracker
+    name: mostly-tracker
+    username: tracker
+    password: tracker
+    default_schema: ${tracker.db.name}
+  security:
+    username: tracker_user
+    password: tracker_pass
+    role: USER
+  swagger:
+    enabled: true
+    username: swagger_user
+    password: swagger_password
+    role: SWAGGER
+  time-spent:
+    allowed:
+      per-day: 10.00
+#spring properties
+spring:
+  datasource:
+    url: ${tracker.db.url}
+    username: ${tracker.db.username}
+    password: ${tracker.db.password}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        default_catalog: ${tracker.db.default_schema}
+        default_schema: ${tracker.db.default_schema}
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        ddl-auto: validate
+    hibernate:
+      naming:
+        physical-strategy: com.mosltyai.mostlytracker.config.MostlyTrackerNamingStrategyStandardImpl
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    database: postgresql
+#logging
+logging:
+  level:
+    ROOT: INFO
+    org.springframework: WARN
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+server:
+  port: 9090

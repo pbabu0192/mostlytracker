@@ -1,0 +1,1 @@
+alter table project_entry alter column time_spent type numeric ;
