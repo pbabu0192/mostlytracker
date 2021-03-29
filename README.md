@@ -26,7 +26,7 @@
 
 Steps to run the application:
 =============================
-* Kindly ensure that docker and docker-compose is installed
+* Kindly ensure that docker and docker-compose are installed
 * Run application locally
   * Execute ```docker-compose -f docker-compose-only-db.yml up``` (to run PSQL container in the docker )
   * Modify ```application.yml``` => ```tracker.db.url``` => change jdbcurl host to ```localhost```
