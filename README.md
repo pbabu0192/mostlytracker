@@ -1,5 +1,5 @@
 # Mostly Tracker - Project management system
-* APIs developed
+
 *   PROJECT
      * **POST** ```http://localhost:9090/project``` - create project
      * **GET**  ```http://localhost:9090/project``` - get all projects
