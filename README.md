@@ -1,8 +1,8 @@
 # Mostly Tracker - Project management system
 1. APIs developed:
   * Project
-    * **POST** *http://localhost:9090/project*- create project
-    * **GET**   http://localhost:9090/project* - get all projects
+    * **POST** *http://localhost:9090/project* - create project
+    * **GET**  *http://localhost:9090/project* - get all projects
     * **GET**  *http://localhost:9090/project/{projectId}* - get a specified project
     * **PATCH** *http://localhost:9090/project/{projectId}* - update a specified project
     * **DELETE**  *http://localhost:9090/project/{projectId}* - delete a specified project
@@ -38,5 +38,5 @@ Steps to run the application:
   
 Services in docker-compose:
 ===========================
-**postgres** -- To pull and start the PSQL container
-**mostlytracker** -- Prepare java application image and start it by exposing the 9090 port to localhost 9090
+* **postgres** -- To pull and start the PSQL container
+* **mostlytracker** -- Prepare java application image and start it by exposing the 9090 port to localhost 9090
