@@ -1,7 +1,7 @@
 # Mostly Tracker - Project management system
-1. APIs developed:
-  * Project
-    * **POST** *http://localhost:9090/project* - create project
+* APIs developed:
+    * Project
+          * **POST** *http://localhost:9090/project* - create project
     * **GET**  *http://localhost:9090/project* - get all projects
     * **GET**  *http://localhost:9090/project/{projectId}* - get a specified project
     * **PATCH** *http://localhost:9090/project/{projectId}* - update a specified project
