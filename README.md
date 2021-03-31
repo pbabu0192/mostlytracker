@@ -3,10 +3,10 @@
 *   PROJECT
      * **POST** ```http://localhost:9090/project``` - create project
      * **GET**  ```http://localhost:9090/project``` - get all projects
-     * **GET**  ```http://localhost:9090/project/{projectId}``` - get a specified project
-     * **PATCH** ```http://localhost:9090/project/{projectId}``` - update a specified project
-     * **DELETE**  ```http://localhost:9090/project/{projectId}``` - delete a specified project
-     * **GET**  ```http://localhost:9090/project/summary/{projectId}``` - get summary of a specified project
+     * **GET**  ```http://localhost:9090/project/{projectId}``` - get a specific project
+     * **PATCH** ```http://localhost:9090/project/{projectId}``` - update a specific project
+     * **DELETE**  ```http://localhost:9090/project/{projectId}``` - delete a specific project
+     * **GET**  ```http://localhost:9090/project/summary/{projectId}``` - get summary of a specific project
 *  PROJECT ENTRY
      * **POST**  ```http://localhost:9090/project/entry``` - create project entry
      * **DELETE**  ```http://localhost:9090/project/entry/{projectEntryId}``` - delete a project entry
